@@ -5,7 +5,7 @@ package ru.veryevilzed.example;
  */
 public class Tools {
 
-    public static void calcilate() {
+    public static void calcilate(Object o) {
 
     }
 

@@ -7,16 +7,16 @@ import ru.veryevilzed.tools.ScenarioTarget;
 /**
  * Created by zed on 11.08.16.
  */
-@Scenario(name = "main", incoming="")
+@Scenario(name = "main", context="java.lang.Object")
 public interface ScenarioA {
 
 
-    @ScenarioMethod(targets = {
-            @ScenarioTarget(name = "ru.veryevilzed.example.Tools.calculate"),
-            @ScenarioTarget(name = "ru.veryevilzed.example.Tools.calculate"),
-            @ScenarioTarget(name = "ru.veryevilzed.example.Tools.calculate"),
-            @ScenarioTarget(name = "ru.veryevilzed.example.Tools.calculate"),
-    })
-    void scenarioPath1();
+    @ScenarioMethod(
+            name = "main",
+            targets = {
+                @ScenarioTarget(method = "ru.veryevilzed.example.Tools.calcilate"),
+                @ScenarioTarget(autowired = "ru.veryevilzed.example.TestService", method = "Test", params = {"15"})
+            })
+    Object scenarioPath1(Object context);
 
 }
