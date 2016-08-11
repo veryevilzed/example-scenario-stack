@@ -8,7 +8,13 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class TestService {
-    public void Test(Object context, int val) {
 
+    public void Test(MyContext context, int val, int[] b) {
+        System.out.println(b.length);
+        context.index += val;
+    }
+
+    public void Test2(Integer i, int val) {
+        i += val;
     }
 }
